@@ -1,0 +1,801 @@
+/*웹폰트-배민 연성체*/
+@font-face {
+    font-family: 'BMYEONSUNG';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMYEONSUNG.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*웹폰트-배민 도현체*/
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*초기설정*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*올영픽*/
+#pick_bg {
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    z-index: 99999999;
+
+    display: none;
+}
+#pick_bg div.pick {
+    width: 612px;
+
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+#pick_bg div.pick p {
+    text-align: right;
+    cursor: pointer;
+    padding: 10px;
+    color:#fff; font-size: 30px;
+    font-family: 'BMYEONSUNG';
+}
+
+/*레이아웃*/
+#wrap_top {
+    width: 100%;
+    height: 100px;
+    background: #82e9e8;
+}
+
+#top {
+    width: 1020px;
+    height: 100px;
+
+    margin: 0 auto;
+    text-align: center;
+
+    position: relative;
+}
+
+#top p.txt1 {
+    background: #035b4f;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 30px;
+
+    margin-top: 10px;
+
+    font-family: 'BMDOHYEON';
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: -1px;
+}
+
+#top p.txt1 span {
+    color: #ff0;
+}
+
+#top p.txt2 {
+    padding-top: 5px;
+
+    font-family: 'BMDOHYEON';
+    color: #fff;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+#top p.txt2 span {
+    font-family: 'Brush Script Std';
+    color: #f4f8ae;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+#top p.logo1 {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+
+#top p.logo2 {
+    position: absolute;
+    right: 0px;
+    bottom: -4px;
+}
+
+/*로고영역*/
+#header {
+    width: 1020px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+#header h2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#header input[type="search"] {
+    margin-left: 100px;
+
+    width: 340px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #9acd28;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+::placeholder {
+    color: #777;
+}
+
+#header select {
+    margin-left: 65px;
+
+    width: 240px;
+    height: 40px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+#header select option {
+    color: #777;
+}
+
+/*메뉴영역*/
+#wrap_nav {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 2px solid #333;
+
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+#nav {
+    width: 1020px;
+    height: 45px;
+    line-height: 45px;
+
+
+    margin: 0 auto;
+}
+
+#nav>ul>li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 35px;
+
+    position: relative;
+}
+
+#nav>ul>li>a {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#nav>ul>li:hover>a {
+    color: #f47473;
+    text-decoration: underline;
+}
+
+
+#nav>ul>li:first-child {
+    width: 145px;
+    height: 45px;
+    text-align: center;
+
+    margin: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/*서브메뉴*/
+#nav>ul>li>ul.sub {
+    position: absolute;
+    left: -20px;
+    top: 45px;
+    border: 2px solid #000;
+    border-top: 0;
+
+    display: none;
+}
+
+#nav>ul>li:hover>ul.sub {
+    display: block;
+}
+
+#nav>ul>li>ul.sub>li {
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+}
+
+#nav>ul>li>ul.sub>li>a {
+    display: block;
+    width: 100px;
+    height: 45px;
+    box-sizing: border-box;
+    padding-left: 10px;
+
+    color: #666;
+    font-weight: bold;
+    letter-spacing: -1px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#nav>ul>li>ul.sub>li>a:hover {
+    background: #9acd28;
+    color: #fff;
+}
+
+#header .menu-toggle-btn {
+    display: none;
+}
+
+/*공통상단영역*/
+
+/*기프트카드 영역*/
+#gift_top {
+    width: 1020px;
+    height: 100px;
+    background: url(../images/gift_top_bg.jpg);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+#gift_top h2 {
+    font-size: 42px;
+    color: #111;
+    letter-spacing: -4px;
+}
+
+#gift_top h2 span {
+    color: #666;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-weight: normal;
+}
+#gift_top p {
+    border: 1px solid #666;
+    color: #666;
+    font-size: 13px;
+    letter-spacing: -1px;
+
+    padding: 5px 15px;
+    border-radius: 5px;
+
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    
+}
+
+#gift_card1 {
+    width: 1020px; 
+    /* background: cyan; */
+    margin: 50px auto;
+}
+#gift_card1 h2 {
+    padding-left: 30px;
+    padding-top: 30px;
+
+    color:#111; font-size: 24px;
+    letter-spacing: -2px;
+}
+#gift_card1 ul {
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+#gift_card1 ul li {
+    width: 220px; height: 235px;
+    /* border: 1px solid blue; */
+
+    margin: 20px 0;
+    text-align: center;
+
+}
+#gift_card1 ul li h4 {
+    text-align: center;
+    color:#666; font-size: 18px; 
+    letter-spacing: -1px;
+}
+#gift_card1 ul li p span {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 100px; height: 35px;
+    line-height: 35px;
+    text-align: center;
+
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 5px;
+
+    margin: 15px 3px;
+
+    color:#666; font-size: 14px; 
+    letter-spacing: -1px;
+    cursor: pointer;
+    
+}
+#gift_card1 ul li p span img {
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+
+/*유의사항*/
+#gift_down {
+    width: 1020px; 
+    margin: 50px auto;
+    position: relative;
+}
+#gift_down h2 {
+    letter-spacing: -3px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ddd;
+    
+}
+#gift_down span {
+    position: absolute;
+    right: 10px;
+    top:10px;
+
+    cursor: pointer;
+}
+#gift_txt {
+    width: 1020px; 
+    background: #ddd;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: none;
+}
+
+#gift_txt pre {
+    color:#666;
+    font-size: 14px; letter-spacing: -1px;
+    font-family: '맑은 고딕';
+    line-height: 2;
+}
+#gift_txt pre u {
+    font-weight: bold;
+}
+
+#gift_txt.show { display:block;}
+
+
+/*공통하단영역*/
+
+/*카피라이트*/
+#wrap_footer {
+    width: 100%;
+    height: 180px;
+    background: #262626;
+}
+
+#footer {
+    width: 1020px;
+    height: 180px;
+
+    margin: 50px auto 0;
+}
+
+#footer p.logo {
+    padding: 30px 0 10px 40px;
+}
+
+#footer p.txt {
+    padding-left: 40px;
+
+    color: #bbb;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 1.7;
+}
+
+#footer p.txt span {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #aaa;
+    margin: 0 5px;
+}
+
+#footer p.txt1 {
+    display: none;
+}
+
+
+/*팝업배너*/
+#popup {
+    position: fixed;
+    left: 80%;
+    top: 300px;
+    cursor: pointer;
+
+    animation-name: popup;
+    animation-duration:7s;
+    animation-iteration-count: infinite;
+    /*무한반복*/
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*-----------태블릿버전-----------*/
+@media all and (max-width:1024px) {
+
+    /*상단배너*/
+    #wrap_top {
+        display: none;
+    }
+
+    /*로고영역*/
+    #header {
+        width: 100%;
+        height: auto;
+
+        position: relative;
+        line-height: 0;
+    }
+
+    #header h2 {
+        display: block;
+        text-align: center;
+    }
+
+    #header h2 img {
+        width: 220px;
+    }
+
+    #header input[type="search"] {
+        width: 230px;
+
+        position: absolute;
+        left: 20px;
+        top: 30%;
+        margin: 0;
+
+        font-size: 11px;
+    }
+
+    #header select {
+        width: 200px;
+
+        position: absolute;
+        right: 40px;
+        top: 30%;
+        margin: 0;
+
+    }
+
+    #header .menu-toggle-btn {
+        display: none;
+    }
+
+
+    /*메뉴영역*/
+    #wrap_nav {
+        height: auto;
+    }
+
+    #nav {
+        width: 100%;
+        height: auto;
+    }
+
+    #nav ul {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        /*박스 안에 자식 박스를 여러줄로 표시*/
+
+    }
+
+    #nav ul li:first-child {
+        display: none;
+    }
+
+    #nav ul li {
+        width: calc(100%/3);
+        margin: 0;
+        text-align: center;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    #nav>ul>li:hover>ul.sub {
+        display: none;
+    }
+
+    /*태블릿 기프트카드 영역*/
+    #gift_top {
+        width: 100%;
+        height: 74px;
+        background-size: 100%;
+
+    }
+    #gift_top h2 {
+        font-size: 32px;
+    }
+
+    #gift_top span {
+        font-size: 14px;
+    }
+    #gift_top p {
+        font-size: 11px;
+    }
+
+    #gift_card1 {
+        width: 100%;
+    }
+
+    #gift_card1 h2 {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
+    #gift_card1 ul li {
+        width: 23%;
+        margin: 10px 5px;
+        height: auto;
+    }
+    #gift_card1 ul li > img {
+        width: 100%;
+    }
+
+    #gift_card1 ul li p {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #gift_card1 ul li p span {
+        font-size: 12px;
+    }
+
+
+    #gift_down {
+        width: 100%;
+    }
+
+    #gift_down h2 {
+        font-size: 20px;
+    }
+
+    #gift_txt {
+        width: 100%;
+    }
+
+    #gift_txt pre {
+        font-size: 12px;
+        white-space: pre-line;
+        /*자동 줄바꿈*/
+    }
+
+
+    /*카피라이트*/
+    #footer {
+        width: 100%;
+        margin: 30px auto 0;
+    }
+
+    #footer p.logo img {
+        width: 180px;
+    }
+
+    #footer p.txt {
+        font-size: 12px;
+        letter-spacing: -1px;
+    }
+
+    #footer p.txt1 {
+        display: none;
+    }
+
+    #popup {
+        display: none;
+    }
+}
+
+/*태블릿끝*/
+
+
+/*-----------모바일버전-----------*/
+@media all and (max-width:768px) {
+
+    #header input[type="search"] {
+        display: none;
+    }
+
+    #header select {
+        display: none;
+    }
+
+    #header .menu-toggle-btn {
+        display: block;
+        width: 20px;
+
+        position: absolute;
+        right: 30px;
+        top: 40%;
+        cursor: pointer;
+    }
+
+    #header .menu-toggle-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #333;
+    }
+
+    #header .menu-toggle-btn span:nth-child(2) {
+        margin: 5px 0;
+    }
+
+    #nav {
+        display: none;
+    }
+
+    #nav.show {
+        display: block;
+    }
+
+
+    #nav ul li {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        background: #000;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    #nav ul li a {
+        color: #fff;
+    }
+
+    /*모바일버전 기프트카드 영역*/
+    #gift_top {
+        height: 45px;
+    }
+
+    #gift_top h2 {
+        font-size: 24px;
+    }
+
+    #gift_top h2 span {
+        font-size: 12px;
+    }
+
+    #gift_top p {
+        font-size: 9px;
+    }
+
+    #gift_card1 {
+        margin: 0;
+    }
+    #gift_card1 h2 {
+        display: none;
+    }
+    #gift_top h2 span {
+        display: none;
+    }
+    #gift_card1 ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    #gift_card1 ul li {
+        width: calc(100%/2);
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #gift_card1 ul li > img {
+        width: 80%;
+    }
+    #gift_card1 ul li h4 {
+        font-size: 16px;
+    }
+    #gift_down h2 {
+        padding: 0;
+    }
+    
+    #gift_down {
+        margin: 0;
+    }
+    #gift_down span {
+        top:5px;
+    }
+
+    #gift_txt pre {
+        font-size: 9px;
+        
+    }
+
+
+    /*카피라이트*/
+    #wrap_footer {
+        height: 80px;
+    }
+
+    #footer {
+        height: 80px;
+        margin: 0;
+        text-align: center;
+    }
+
+    #footer p.logo {
+        padding: 0;
+    }
+
+    #footer p.txt {
+        padding: 0;
+        font-size: 8px;
+        letter-spacing: 0;
+        display: none;
+    }
+
+    #footer p.txt1 {
+        display: block;
+        font-size: 9px;
+        color: #bbb;
+    }
+
+    #popup {
+        display: none;
+    }
+
+}
+
+/*모바일 끝*/
